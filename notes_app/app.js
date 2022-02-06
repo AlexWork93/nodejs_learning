@@ -1,4 +1,15 @@
+const validator = require('validator');
+const nameFromUtils = require('./utils');
 const fs = require('fs');
 
-fs.writeFileSync('notes.txt', 'This file was created by node js');
-fs.appendFileSync('notes.txt', '\nAppended part\nThis file was still created by node js');
+const name = 'Alex';
+
+console.log(name);
+console.log(nameFromUtils.name);
+
+const resultOfAddition = nameFromUtils.addNumbers(5, 6);
+console.log(resultOfAddition);
+
+console.log(validator.isEmail('dasdasdadawdasda@lblsdf.sdf'));
+console.log(validator.isURL('http://sdfsdfdsfs.sdfsdfsdf.com'))
+fs.writeFileSync('notes.txt', `${nameFromUtils.name}\n${resultOfAddition}`);
